@@ -14,7 +14,7 @@ spec:
     associations:
       - kind: Label
         name: cranky-ramanujan-708001
-    name: mariadb
+    name: duikforum's Bucket
 ---
 apiVersion: influxdata.com/v2alpha1
 kind: Dashboard
@@ -49,7 +49,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mariadb")
+                from(bucket: "duikforum's Bucket")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mysql")
                   |> filter(fn: (r) => r["_field"] == "connections" or r["_field"] == "max_used_connections")
@@ -82,7 +82,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mariadb")
+                from(bucket: "duikforum's Bucket")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mysql")
                   |> filter(fn: (r) => r["_field"] == "bytes_sent" or r["_field"] == "bytes_received")
@@ -117,7 +117,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mariadb")
+                from(bucket: "duikforum's Bucket")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mysql")
                   |> filter(fn: (r) => r["_field"] == "select_full_join" or r["_field"] == "select_full_range_join" or r["_field"] == "select_range" or r["_field"] == "select_range_check" or r["_field"] == "select_scan")
@@ -152,7 +152,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mariadb")
+                from(bucket: "duikforum's Bucket")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mysql")
                   |> filter(fn: (r) => r["_field"] == "handler_commit" or r["_field"] == "handler_delete" or r["_field"] == "handler_discover" or r["_field"] == "handler_read_key" or r["_field"] == "handler_read_rnd_next" or r["_field"] == "handler_write" or r["_field"] == "handler_update")
@@ -186,7 +186,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mariadb")
+                from(bucket: "duikforum's Bucket")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mysql")
                   |> filter(fn: (r) => r["_field"] == "qcache_free_memory")
@@ -218,7 +218,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mariadb")
+                from(bucket: "duikforum's Bucket")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mysql")
                   |> filter(fn: (r) => r["_field"] == "threads_running" or r["_field"] == "threads_connected")
@@ -251,7 +251,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mariadb")
+                from(bucket: "duikforum's Bucket")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mysql")
                   |> filter(fn: (r) => r["_field"] == "created_tmp_tables" or r["_field"] == "created_tmp_disk_tables" or r["_field"] == "created_tmp_files")
@@ -287,7 +287,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mariadb")
+                from(bucket: "duikforum's Bucket")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mysql")
                   |> filter(fn: (r) => r["_field"] == "table_locks_waited" or r["_field"] == "table_locks_immediate")
@@ -321,7 +321,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mariadb")
+                from(bucket: "duikforum's Bucket")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mysql")
                   |> filter(fn: (r) => r["_field"] == "com_insert" or r["_field"] == "com_update" or r["_field"] == "com_commit" or r["_field"] == "com_begin" or r["_field"] == "com_admin_commands" or r["_field"] == "com_show_status" or r["_field"] == "com_show_variables" or r["_field"] == "com_set_option")
@@ -357,7 +357,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mariadb")
+                from(bucket: "duikforum's Bucket")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mysql")
                   |> filter(fn: (r) => r["_field"] == "qcache_hits" or r["_field"] == "qcache_inserts" or r["_field"] == "qcache_not_cached" or r["_field"] == "qcache_lowmem_prunes" or r["_field"] == "qcache_queries_in_cache")
@@ -376,7 +376,7 @@ spec:
         name: Current MySQL Uptime
         queries:
           - query: |-
-                from(bucket: "mariadb")
+                from(bucket: "duikforum's Bucket")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mysql")
                   |> filter(fn: (r) => r["_field"] == "uptime")
@@ -395,7 +395,7 @@ spec:
         name: Current Queries
         queries:
           - query: |-
-                from(bucket: "mariadb")
+                from(bucket: "duikforum's Bucket")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mysql")
                   |> filter(fn: (r) => r["_field"] == "queries")
@@ -427,7 +427,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "mariadb")
+                from(bucket: "duikforum's Bucket")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mysql")
                   |> filter(fn: (r) => r["_field"] == "slow_queries")
